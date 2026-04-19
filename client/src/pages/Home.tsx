@@ -81,24 +81,6 @@ export default function Home() {
       isFeatured: true,
     },
     {
-      id: "4",
-      slug: "metodo-score-700-30-dias",
-      title: "Método Score 700+ em 30 Dias",
-      shortDescription: "Aumente seu score rápido e grátis.",
-      description: "Estratégia prática para subir score e limpar nome.",
-      price: 29.9,
-      originalPrice: null,
-      features: [
-        "Estratégia completa com Cadastro Positivo + Open Finance",
-        "Dicas que fazem o score subir na hora",
-        "Checklist diário de 30 dias",
-        "Macetes que os bancos não contam",
-      ],
-      badge: "POPULAR",
-      isHighlight: false,
-      isFeatured: true,
-    },
-    {
       id: "5",
       slug: "pacote-premium",
       title: "Pacote EasyCred Premium – Crédito + Renda Extra",
@@ -115,6 +97,24 @@ export default function Home() {
         "Atualizações incluídas",
       ],
       badge: "MELHOR OFERTA",
+      isHighlight: true,
+      isFeatured: true,
+    },
+    {
+      id: "4",
+      slug: "metodo-score-700-30-dias",
+      title: "Método Score 700+ em 30 Dias",
+      shortDescription: "Aumente seu score rápido e grátis.",
+      description: "Estratégia prática para subir score e limpar nome.",
+      price: 29.9,
+      originalPrice: null,
+      features: [
+        "Estratégia completa com Cadastro Positivo + Open Finance",
+        "Dicas que fazem o score subir na hora",
+        "Checklist diário de 30 dias",
+        "Macetes que os bancos não contam",
+      ],
+      badge: "POPULAR",
       isHighlight: false,
       isFeatured: true,
     },
@@ -298,7 +298,7 @@ export default function Home() {
                   key={product.id}
                   product={product}
                   onBuy={setSelectedProduct}
-                  featured={product.isFeatured ?? false}
+                  featured={product.slug === "pacote-premium"}
                 />
               ))}
             </div>
@@ -321,7 +321,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {featuredProducts.map((product) => (
               <ProductCard
                 key={product.id}
