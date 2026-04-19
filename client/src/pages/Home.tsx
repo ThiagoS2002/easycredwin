@@ -115,7 +115,43 @@ export default function Home() {
         "Atualizações incluídas",
       ],
       badge: "MELHOR OFERTA",
-      isHighlight: true,
+      isHighlight: false,
+      isFeatured: true,
+    },
+    {
+      id: "6",
+      slug: "mini-curso-consignado",
+      title: "Mini-Curso Completo – Empréstimo Consignado para Negativados",
+      shortDescription: "O curso mais completo do mercado em vídeo + PDF.",
+      description: "Aprenda consignado do jeito certo, com passo a passo prático.",
+      price: 37.9,
+      originalPrice: null,
+      features: [
+        "Aula 1: Consignado INSS",
+        "Aula 2: Consignado CLT",
+        "Como simular antes de contratar",
+        "Como evitar juros abusivos",
+      ],
+      badge: "COMPLETO",
+      isHighlight: false,
+      isFeatured: true,
+    },
+    {
+      id: "7",
+      slug: "guia-limpar-nome-rapido",
+      title: "Guia Prático para Limpar o Nome Rápido",
+      shortDescription: "Estratégia direta para sair das restrições com inteligência.",
+      description: "Aprenda a negociar, priorizar dívidas e recuperar seu crédito.",
+      price: 24.9,
+      originalPrice: null,
+      features: [
+        "Como negociar dívida do jeito certo",
+        "Estratégia para priorizar pagamentos",
+        "Como consultar restrições",
+        "Como acelerar recuperação de score",
+      ],
+      badge: "NOVO",
+      isHighlight: false,
       isFeatured: true,
     },
   ] as unknown as Product[];
@@ -315,7 +351,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {benefits.map((b, i) => (
-              <div key={i} className="flex gap-4 p-5 rounded-xl border border-white/5 bg-card hover:border-primary/20 transition-colors">
+              <div
+                key={i}
+                className="flex gap-4 p-5 rounded-xl border border-white/5 bg-card hover:border-primary/20 transition-colors"
+              >
                 <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0 text-primary">
                   {b.icon}
                 </div>
@@ -448,12 +487,18 @@ export default function Home() {
                     </a>
                   </li>
                   <li>
-                    <a href="#faq" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                    <a
+                      href="#faq"
+                      className="text-xs text-muted-foreground hover:text-primary transition-colors"
+                    >
                       FAQ
                     </a>
                   </li>
                   <li>
-                    <a href="#por-que" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                    <a
+                      href="#por-que"
+                      className="text-xs text-muted-foreground hover:text-primary transition-colors"
+                    >
                       Por que EasyCred
                     </a>
                   </li>
