@@ -154,6 +154,42 @@ export default function Home() {
       isHighlight: false,
       isFeatured: true,
     },
+      {
+  id: "8",
+  slug: "metodo-renda-whatsapp",
+  title: "Método Renda com WhatsApp – Do Zero ao Lucro",
+  shortDescription: "Aprenda a vender usando apenas WhatsApp.",
+  description: "Estratégia simples para gerar renda usando grupos e listas.",
+  price: 17.9,
+  originalPrice: null,
+  features: [
+    "Como criar listas de transmissão",
+    "Scripts prontos de venda",
+    "Como fechar vendas sem aparecer",
+    "Estratégia usada por afiliados",
+  ],
+  badge: "HOT",
+  isHighlight: false,
+  isFeatured: true,
+},
+{
+  id: "9",
+  slug: "guia-aprovacao-rapida",
+  title: "Guia de Aprovação Rápida de Crédito",
+  shortDescription: "Aumente suas chances de aprovação em minutos.",
+  description: "Técnicas diretas que aumentam aprovação de crédito.",
+  price: 14.9,
+  originalPrice: null,
+  features: [
+    "Como preencher cadastro corretamente",
+    "Erros que fazem ser recusado",
+    "Como simular antes de pedir",
+    "Dicas usadas por correspondentes bancários",
+  ],
+  badge: "NOVO",
+  isHighlight: false,
+  isFeatured: true,
+}
   ] as unknown as Product[];
 
   const highlightProducts = products.filter((p) => p.isHighlight);
