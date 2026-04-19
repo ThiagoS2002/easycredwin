@@ -1,0 +1,17 @@
+{
+  "query": "\nCREATE TABLE `orders` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`productId` int NOT NULL,\n\t`email` varchar(320) NOT NULL,\n\t`status` enum('pending','approved','rejected','cancelled') NOT NULL DEFAULT 'pending',\n\t`paymentId` varchar(255),\n\t`preferenceId` varchar(255),\n\t`downloadToken` varchar(128),\n\t`amount` decimal(10,2) NOT NULL,\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n\tCONSTRAINT `orders_id` PRIMARY KEY(`id`),\n\tCONSTRAINT `orders_downloadToken_unique` UNIQUE(`downloadToken`)\n);\n\nCREATE TABLE `products` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`slug` varchar(100) NOT NULL,\n\t`title` varchar(255) NOT NULL,\n\t`shortDescription` text,\n\t`price` decimal(10,2) NOT NULL,\n\t`originalPrice` decimal(10,2),\n\t`features` json DEFAULT ('[]'),\n\t`badge` varchar(100),\n\t`isHighlight` boolean DEFAULT false,\n\t`isFeatured` boolean DEFAULT false,\n\t`fileUrl` text,\n\t`sortOrder` int DEFAULT 0,\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n\tCONSTRAINT `products_id` PRIMARY KEY(`id`),\n\tCONSTRAINT `products_slug_unique` UNIQUE(`slug`)\n);\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3dDJHS3HXo36dnK.root --database ac8qKZduS2dgPYwzQkdnsh --execute \nCREATE TABLE `orders` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`productId` int NOT NULL,\n\t`email` varchar(320) NOT NULL,\n\t`status` enum('pending','approved','rejected','cancelled') NOT NULL DEFAULT 'pending',\n\t`paymentId` varchar(255),\n\t`preferenceId` varchar(255),\n\t`downloadToken` varchar(128),\n\t`amount` decimal(10,2) NOT NULL,\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n\tCONSTRAINT `orders_id` PRIMARY KEY(`id`),\n\tCONSTRAINT `orders_downloadToken_unique` UNIQUE(`downloadToken`)\n);\n\nCREATE TABLE `products` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`slug` varchar(100) NOT NULL,\n\t`title` varchar(255) NOT NULL,\n\t`shortDescription` text,\n\t`price` decimal(10,2) NOT NULL,\n\t`originalPrice` decimal(10,2),\n\t`features` json DEFAULT ('[]'),\n\t`badge` varchar(100),\n\t`isHighlight` boolean DEFAULT false,\n\t`isFeatured` boolean DEFAULT false,\n\t`fileUrl` text,\n\t`sortOrder` int DEFAULT 0,\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n\tCONSTRAINT `products_id` PRIMARY KEY(`id`),\n\tCONSTRAINT `products_slug_unique` UNIQUE(`slug`)\n);\n",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1064 (42000) at line 17: You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 8 column 31 near \"'[]'),",
+    "\t`badge` varchar(100),",
+    "\t`isHighlight` boolean DEFAULT false,",
+    "\t`isFeatured` boolean DEFAULT false,",
+    "\t`fileUrl` text,",
+    "\t`sortOrder` int DEFAULT 0,",
+    "\t`createdAt` timestamp NOT NULL DEFAULT (now()),",
+    "\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,",
+    "\tCONSTRAINT `products_id` PRIMARY KEY(`id`),",
+    "\tCONSTRAINT `products_slug_unique` UNIQUE(`slu"
+  ]
+}
